@@ -11,11 +11,12 @@ string[] arraytext = {"Hello", "2", "world", ":-)"};
 
 void PrintArray(string[] matr)
 {
+    System.Console.Write("[");
     for (int i = 0; i < matr.Length; i++)
     {
-        System.Console.Write($"{matr[i]}, ");        
+        System.Console.Write($"{matr[i]},");        
     }
-    System.Console.WriteLine();
+    System.Console.WriteLine("]");
 }
 
 int CounterArray(string[] matr)
@@ -45,3 +46,10 @@ void FillArray(string[] array1, string[] array2)
         }          
     }
 }
+
+System.Console.Write ("Заданный массив элементов: ");
+PrintArray(arraytext);
+string[] newArray = new string[CounterArray(arraytext)];
+FillArray (arraytext, newArray);
+System.Console.Write ("Полученный массив состоящий из элементов удовлетворяющих условию - '<= 3 символов': ");
+PrintArray(newArray);
