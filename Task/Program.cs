@@ -8,3 +8,40 @@
 //[“Russia”, “Denmark”, “Kazan”] → []
 Console.Clear();
 string[] arraytext = {"Hello", "2", "world", ":-)"};
+
+void PrintArray(string[] matr)
+{
+    for (int i = 0; i < matr.Length; i++)
+    {
+        System.Console.Write($"{matr[i]}, ");        
+    }
+    System.Console.WriteLine();
+}
+
+int CounterArray(string[] matr)
+{
+    int count = 0;
+    for (int i = 0; i < matr.Length; i++)
+    {
+        string arg = matr[i];
+        int leng = arg.Length;
+        if (leng < 4) count = count + 1;
+    }
+    return count;
+}
+
+void FillArray(string[] array1, string[] array2)
+{
+    int j = 0;
+    for (int i = 0; i < array1.Length; i++)
+    {
+        
+        string arg = array1[i];
+        int leng = arg.Length;
+        if (leng < 4)
+        {
+            array2[j] = array1[i];
+            j++;
+        }          
+    }
+}
